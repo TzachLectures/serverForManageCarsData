@@ -1,37 +1,36 @@
 [
   {
-    "id": 1,
-    "make": "Toyota",
-    "model": "Camry",
-    "year": 2020,
-    "price": 25000
-  },
-  {
     "id": 2,
     "make": "Honda",
     "model": "Civic",
     "year": 2019,
-    "price": 22000
+    "price": 22000,
+    "isSpecial":true
   },
   {
     "id": 3,
     "make": "Ford",
     "model": "Mustang",
     "year": 2021,
-    "price": 35000
+    "price": 35000,
+        "isSpecial":false
   },
   {
     "id": 4,
     "make": "Toyota",
     "model": "XYZ",
     "year": 2022,
-    "price": 29000
+    "price": 29000,
+    "isSpecial":true
+
   },
   {
     "id": 5,
     "make": "Toyota",
     "model": "XYZ234",
     "year": 2022,
-    "price": 29000
+    "price": 29000,
+    "isSpecial":false
+
   }
 ]

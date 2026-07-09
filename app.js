@@ -4,8 +4,17 @@ import cors from "cors"
 const app = express()
 
 app.use(cors({
-  origin: "http://127.0.0.1:5500",
+  origin: ["http://127.0.0.1:5500","http://localhost:5500"],
 }))
+
+app.use((req, res, next) => {
+  console.log("new request received at " + new Date().toLocaleString())
+  next()
+})
+
+
+app.use(express.static("public"))
+
 app.use(express.json())
 
 app.use(router)

@@ -33,10 +33,15 @@ const updateCar = (id, updatedCar) => {
   return true;
 }
 
+const getSpecialCars = ()=>{
+  return cars.filter(c => c.isSpecial);
+}
+
 export  {
   getAllCars,
   getCarById,
     addCar,
     deleteCar,
-    updateCar
+    updateCar,
+  getSpecialCars
 };

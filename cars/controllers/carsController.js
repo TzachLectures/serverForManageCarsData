@@ -4,7 +4,8 @@ import cars from "../data/cars.js";
 import {getAllCars, getCarById,
     addCar,
     deleteCar,
-    updateCar} from "../services/carsDataService.js";
+    updateCar,
+    getSpecialCars} from "../services/carsDataService.js";
 
 const router = express.Router();
 
@@ -18,6 +19,11 @@ router.post("/", (req, res) => {
   addCar(newCar);
  return res.status(201).send("New car added successfully")
 })
+
+router.get("/special", (req, res) => {
+  const specialCars = getSpecialCars();
+  return res.send(specialCars);
+});
 
 router.get("/:id", (req, res) => {
   const carId = req.params.id;
@@ -49,6 +55,8 @@ router.put("/:id", (req, res) => {
     return res.status(404).send("Car not found");
   }
 });
+
+
 
 
 export default router;

@@ -2,14 +2,16 @@ import { getAllCars as getAllCarsFromFile,
     getCarById as getCarByIdFromFile,
     addCar as addCarFromFile,
     deleteCar as deleteCarFromFile,
-    updateCar as updateCarFromFile
+    updateCar as updateCarFromFile,
+    getSpecialCars as getSpecialCarsFromFile
  } from "./carsInFileService.js";
 
 import { getAllCars as getAllCarsFromMemory,
     getCarById as getCarByIdFromMemory,
     addCar as addCarFromMemory,
     deleteCar as deleteCarFromMemory,
-    updateCar as updateCarFromMemory
+    updateCar as updateCarFromMemory,
+    getSpecialCars as getSpecialCarsFromMemory
  } from "./carsInMemoryService.js";
 
 const METHOD = "file"; 
@@ -60,10 +62,20 @@ const updateCar = (id, updatedCar) => {
     }
 }
 
+const getSpecialCars = () => {
+    if (METHOD === "file") {
+        return getSpecialCarsFromFile();
+    }
+    if (METHOD === "memory") {
+        return getSpecialCarsFromMemory();
+    }
+}
+
 export {
     getAllCars,
     getCarById,
     addCar,
     deleteCar,
-    updateCar
+    updateCar,
+    getSpecialCars
 }

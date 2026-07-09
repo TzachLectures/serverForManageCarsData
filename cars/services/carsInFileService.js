@@ -52,11 +52,17 @@ const updateCar = (id, updatedCar) => {
   return false;
 }
 
+const getSpecialCars = ()=>{
+  const carsFromJson = readCarsFile() || [];
+  return carsFromJson.filter(c => c.isSpecial);
+}
+
 
 export {
   getAllCars,
     getCarById,
     addCar,
     deleteCar,
-    updateCar
+    updateCar,
+  getSpecialCars
 };
