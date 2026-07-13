@@ -1,5 +1,7 @@
 import express from "express";
 import cars from "../data/cars.js";
+import validateCar from "../services/carsValidationService.js";
+import CarModel from "../data/carModel.js";
 
 import {getAllCars, getCarById,
     addCar,
@@ -14,9 +16,14 @@ const allCars = getAllCars();
  return res.send(allCars);
 })
 
-router.post("/", (req, res) => {
+router.post("/",async (req, res) => {
   const newCar = req.body;
-  addCar(newCar);
+  const validationError = validateCar(newCar);
+  if (validationError) {
+    return res.status(400).send(`Validation error: ${validationError.message}`);
+  }
+  await addCar(newCar);
+
  return res.status(201).send("New car added successfully")
 })
 
@@ -48,6 +55,10 @@ router.delete("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const carId = parseInt(req.params.id);
+    const validationError = validateCar(req.body);
+  if (validationError) {
+    return res.status(400).send(`Validation error: ${validationError.message}`);
+  }
   const isUpdated = updateCar(carId, req.body);
   if (isUpdated) {
     return res.send("Car updated successfully");

@@ -5,7 +5,7 @@
     "model": "Civic",
     "year": 2019,
     "price": 22000,
-    "isSpecial":true
+    "isSpecial": true
   },
   {
     "id": 3,
@@ -13,7 +13,7 @@
     "model": "Mustang",
     "year": 2021,
     "price": 35000,
-        "isSpecial":false
+    "isSpecial": false
   },
   {
     "id": 4,
@@ -21,8 +21,7 @@
     "model": "XYZ",
     "year": 2022,
     "price": 29000,
-    "isSpecial":true
-
+    "isSpecial": true
   },
   {
     "id": 5,
@@ -30,7 +29,15 @@
     "model": "XYZ234",
     "year": 2022,
     "price": 29000,
-    "isSpecial":false
-
+    "isSpecial": false
+  },
+  {
+    "id": 6,
+    "make": "Toyota",
+    "model": "XYZ234",
+    "year": 2022,
+    "price": 29000,
+    "isSpecial": true,
+    "color":"red"
   }
 ]

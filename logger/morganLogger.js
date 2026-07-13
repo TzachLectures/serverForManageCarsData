@@ -27,4 +27,13 @@ const morganLogger = morgan(function (tokens, req, res) {
 
 })
 
+
+//מה מקבלת הפונקציה 
+//morgan()
+//פונקציית קולבאק
+
+
+//מה מחזירה פונקציית מורגן?
+//פונקציית מידלוור
+
 export default morganLogger

@@ -14,7 +14,10 @@ import { getAllCars as getAllCarsFromMemory,
     getSpecialCars as getSpecialCarsFromMemory
  } from "./carsInMemoryService.js";
 
-const METHOD = "file"; 
+import { addCar as addCarFromMongo } from "./carsInMongoService.js";
+
+
+const METHOD = "mongo"; 
 
 
 const getAllCars = () => {
@@ -35,12 +38,15 @@ const getCarById = (id) => {
     }
 }
 
-const addCar = (newCar) => {
+const addCar = async (newCar) => {
     if (METHOD === "file") {
         return addCarFromFile(newCar);
     }
     if (METHOD === "memory") {
         return addCarFromMemory(newCar);
+    }
+    if (METHOD === "mongo") {
+        return await addCarFromMongo(newCar);
     }
 }
 
